@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebLearn1.ViewModels.TripViewModel>
+@using WebLearn1.Extensions
+@{
+    ViewBag.Title = "Trips!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Here are our trips!</h2>
+<div class="container">
+    @foreach (var rowItems in Model.Partition(3))
+    {
+        <div class="row">
+            @foreach (var item in rowItems)
+            {
+                <div class="col-xs-4">
+                    <div class="thumbnail">
+                        <img src="@Url.Content(item.LeadPhotoSource)" alt="Image" class="img-responsive" />
+                        <div class="caption">
+                            <h4>@Html.DisplayFor(_ => item.Name)</h4>
+                            <p>@Html.DisplayFor(_ => item.Description)</p>
+                            <table class="tripstable table table-striped table-condensed">
+                                <thead>
+                                    <tr><td>Dates</td><td>Cost</td></tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var tour in item.Tours)
+                                    { 
+                                        <tr><td>@tour.PeriodText</td><td>@tour.CostText@if (tour.SpecialOffer)
+                                        { <span class="glyphicon glyphicon-star" aria-hidden="true"></span> }</td></tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+               </div>
+            }
+        </div>
+    }
+</div>
+
+

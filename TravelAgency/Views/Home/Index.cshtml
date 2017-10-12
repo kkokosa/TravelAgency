@@ -1,0 +1,85 @@
+﻿@model WebLearn1.ViewModels.HomepageViewModel
+@using WebLearn1.Extensions
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Best travels!</h1>
+    <p class="lead">Just the best travel agency in the world. Period.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">About us &raquo;</a></p>
+</div>
+
+<div class="row"> 
+    <div class="col-xs-9">
+        <b>Here are our trips!</b>
+        @foreach (var rowItems in Model.Trips.Partition(2))
+        {
+            <div class="row">
+                @foreach (var item in rowItems)
+                {
+                    <div class="col-xs-6">
+                        <div class="thumbnail">
+                            <img src="@Url.Content(item.LeadPhotoSource)" alt="Image" class="img-responsive" />
+                            <div class="caption">
+                                <h4>@Html.DisplayFor(_ => item.Name)</h4>
+                                <p>@Html.DisplayFor(_ => item.Description)</p>
+                                <table class="tripstable table table-striped table-condensed">
+                                    <thead>
+                                        <tr><td>Dates</td><td>Cost</td></tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var tour in item.Tours)
+                                        {
+                                            <tr>
+                                                <td>@tour.PeriodText</td>
+                                                <td>
+                                                    @tour.CostText@if (tour.SpecialOffer)
+                                                    { <span class="glyphicon glyphicon-star" aria-hidden="true"></span> }
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="col-xs-3">
+        <div class="header">Special offers!</div>
+        <div id="specialOffers">
+            @*@{Html.RenderPartial("SpecialOffers", Model.SpecialOffers);}*@
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $("#specialOffers").load('@(Url.Action("GetOffers", "SpecialOffers", null, Request.Url.Scheme))?categoryId=0&limit=10');
+    </script>
+}

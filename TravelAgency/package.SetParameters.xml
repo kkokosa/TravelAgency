@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="TravelAgency" />
+  <setParameter name="DefaultConnection-Web.config Connection String" value="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\aspnet-WebLearn1-20150403023301.mdf;Initial Catalog=aspnet-WebLearn1-20150403023301;Integrated Security=True;User Instance=True" />
+  <setParameter name="TripsOfferDbContext-Web.config Connection String" value="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\TripsOfferDb.mdf;Integrated Security=True;User Instance=True" />
+  <setParameter name="WebLearn1.Models.ToursOfferDbContext-Web.config Connection String" value="WebLearn1.Models.ToursOfferDbContext_ConnectionString" />
+</parameters>

@@ -1,0 +1,20 @@
+﻿@model WebLearn1.ViewModels.SpecialOffersViewModel
+<table class="offerstable table table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Trip</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Offers)
+        {
+            <tr>
+                <td>@product.StartTime.Date.ToString("yyyy-MM-dd")</td>
+                <td>@product.Name</td>
+                <td>@product.Cost</td>
+            </tr>
+        }
+    </tbody>
+</table>  
