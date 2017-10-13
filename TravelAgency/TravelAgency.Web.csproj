@@ -218,9 +218,61 @@
     <Compile Include="ViewModels\TripViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TripsOfferDb.mdf" />
+    <Content Include="App_Data\TripsOfferDb_log.ldf">
+      <DependentUpon>TripsOfferDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\header.jpg" />
+    <Content Include="Data\Images\Big\egypt1.jpg" />
+    <Content Include="Data\Images\Big\egypt2.jpg" />
+    <Content Include="Data\Images\Big\egypt3.jpg" />
+    <Content Include="Data\Images\Big\egypt4.jpg" />
+    <Content Include="Data\Images\Big\egypt5.jpg" />
+    <Content Include="Data\Images\Big\france1.jpg" />
+    <Content Include="Data\Images\Big\france2.jpg" />
+    <Content Include="Data\Images\Big\france3.jpg" />
+    <Content Include="Data\Images\Big\france4.jpg" />
+    <Content Include="Data\Images\Big\france5.jpg" />
+    <Content Include="Data\Images\Big\poland1.jpg" />
+    <Content Include="Data\Images\Big\poland2.jpg" />
+    <Content Include="Data\Images\Big\poland3.jpg" />
+    <Content Include="Data\Images\Big\poland4.jpg" />
+    <Content Include="Data\Images\Big\poland5.jpg" />
+    <Content Include="Data\Images\Big\poland6.jpg" />
+    <Content Include="Data\Images\Original\egypt1.jpg" />
+    <Content Include="Data\Images\Original\egypt2.jpg" />
+    <Content Include="Data\Images\Original\egypt3.jpg" />
+    <Content Include="Data\Images\Original\egypt4.jpg" />
+    <Content Include="Data\Images\Original\egypt5.jpg" />
+    <Content Include="Data\Images\Original\france1.jpg" />
+    <Content Include="Data\Images\Original\france2.jpg" />
+    <Content Include="Data\Images\Original\france3.jpg" />
+    <Content Include="Data\Images\Original\france4.jpg" />
+    <Content Include="Data\Images\Original\france5.jpg" />
+    <Content Include="Data\Images\Original\poland1.jpg" />
+    <Content Include="Data\Images\Original\poland2.jpg" />
+    <Content Include="Data\Images\Original\poland3.jpg" />
+    <Content Include="Data\Images\Original\poland4.jpg" />
+    <Content Include="Data\Images\Original\poland5.jpg" />
+    <Content Include="Data\Images\Original\poland6.jpg" />
+    <Content Include="Data\Images\Small\egypt1.jpg" />
+    <Content Include="Data\Images\Small\egypt2.jpg" />
+    <Content Include="Data\Images\Small\egypt3.jpg" />
+    <Content Include="Data\Images\Small\egypt4.jpg" />
+    <Content Include="Data\Images\Small\egypt5.jpg" />
+    <Content Include="Data\Images\Small\france1.jpg" />
+    <Content Include="Data\Images\Small\france2.jpg" />
+    <Content Include="Data\Images\Small\france3.jpg" />
+    <Content Include="Data\Images\Small\france4.jpg" />
+    <Content Include="Data\Images\Small\france5.jpg" />
+    <Content Include="Data\Images\Small\poland1.jpg" />
+    <Content Include="Data\Images\Small\poland2.jpg" />
+    <Content Include="Data\Images\Small\poland3.jpg" />
+    <Content Include="Data\Images\Small\poland4.jpg" />
+    <Content Include="Data\Images\Small\poland5.jpg" />
+    <Content Include="Data\Images\Small\poland6.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -285,10 +337,7 @@
     <Content Include="Views\Trips\Index.cshtml" />
     <Content Include="Views\Shared\SpecialOffers.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Data\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

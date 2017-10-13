@@ -38,9 +38,4 @@ namespace WebLearn1.Models
         public DbSet<Trip> Trips { get; set; }
         public DbSet<Photo> Photos { get; set; }
     }
-
-    public class ToursOfferDbContext : DbContext
-    {
-        public DbSet<Tour> Tours { get; set; }
-    }
 }
