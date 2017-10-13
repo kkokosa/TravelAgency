@@ -27,3 +27,11 @@ Automatic migrations - You can intersperse automatic and code-based migrations b
 
     <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-WebLearn1-20150403023301.mdf;Initial Catalog=aspnet-WebLearn1-20150403023301;Integrated Security=True" providerName="System.Data.SqlClient" />
     <add name="TripsOfferDbContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\TripsOfferDb.mdf;Integrated Security=True" providerName="System.Data.SqlClient" />
+
+-----------------------------------------/
+|Team City + Octopus                    /
+---------------------------------------/
+
+Tip: delayed package publishing
+NuGet packages created from your build won't appear in the TeamCity NuGet feed until after the build fully completes. If you plan to trigger a deployment during a build, this creates a problem: the package won't be in the feed until the build is published, so you won't be able to deploy it.
+The solution is to configure a secondary build configuration, and use a snapshot dependency and build trigger in TeamCity to run the deployment build configuration after the first build configuration completes. The video below demonstrates how to do this.
